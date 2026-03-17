@@ -58,17 +58,14 @@ Blaster -  lower firing rate and range compared to default in exchange for large
 Rapid Fire - upped bullet firing rate, higher collective damage, normal range, have to charge it (like a gatling gun)
 Homing Shot - slightly weaker damage then normal, but has longer range that locks onto targets, normal fire rate. (Maybe it has a charge shot that is bigger/stronger?)
 ____________________________________________________________________________
-Mechanics implemented
+Mechanics to be implemented
 * Double jump
-   * Triple jump
 * Dash
 * Wall slide
 * Wall jump
 * Coyote time
 * Shoot
 * Kick
-
-
 ____________________________________________________________________________
 Demo Build goals
 * First level tutorial
@@ -77,7 +74,7 @@ Demo Build goals
    * Release for SAGE?
 
 
-
+_____________________________________________________________________________
 
 
 
