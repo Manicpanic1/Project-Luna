@@ -11,10 +11,9 @@ Gameplay
    * For big honchos of the hackers
    * Possessed/Hacked Solanna (lightning/sound powers?)
 * Small upgrades (Bytes) that can add or enhance movement abilities/implement different challenges. (think badges in Mario Wonder) [Can beat game without really messing with Bytes][They look like little Floppy Disks]
-* Pets? (like tamagotchi or chao)
+* Pets? (like tamagotchi or chao)(decided against)
 -------------------------------------------------------------------------------------------------------------------------------
 Game Engine & Details
-
 
 * Godot
 * Controller support - PS, Xbox, NS
@@ -23,7 +22,7 @@ Game Engine & Details
 -------------------------------------------------------------------------------------------------------------------------------
 Movement
 Controls -
-Keyboard -
+
 Jump (Space/B)
 Boost (W/↑/ZR)
 Crouch (S/↓)
