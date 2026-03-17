@@ -1,0 +1,124 @@
+[gd_scene load_steps=16 format=3 uid="uid://bxaqqldcfgpwt"]
+
+[ext_resource type="Script" uid="uid://dtpjonxboc6tr" path="res://entities/player.gd" id="1_wwqqy"]
+[ext_resource type="Texture2D" uid="uid://cfsjeadpsf6rq" path="res://sprites/luna_test_sprite_fall.png" id="2_j3vb1"]
+[ext_resource type="Texture2D" uid="uid://b5ka5ibiehj5b" path="res://sprites/luna_test_sprite_run.png" id="2_q012f"]
+[ext_resource type="Texture2D" uid="uid://brxq76gpq5bo3" path="res://luna_test_sprite_idle.png" id="2_xotbs"]
+[ext_resource type="Texture2D" uid="uid://cinmrgooe0s3n" path="res://sprites/luna_test_sprite_jump.png" id="4_w5xkg"]
+[ext_resource type="Texture2D" uid="uid://c1xlucoofatyi" path="res://sprites/luna_test_sprite_fall1.png" id="5_l5fcu"]
+[ext_resource type="Texture2D" uid="uid://7r505x6uopwb" path="res://sprites/luna_test_sprite_run1.png" id="7_7xggn"]
+[ext_resource type="Texture2D" uid="uid://dlne61urc076k" path="res://sprites/luna_test_sprite_run2.png" id="8_cdv4s"]
+[ext_resource type="Texture2D" uid="uid://xhs8tnftsmip" path="res://sprites/luna_test_sprite_run3.png" id="9_kxwlx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_63b0k"]
+radius = 12.2371
+height = 54.0
+
+[sub_resource type="Animation" id="Animation_32dci"]
+resource_name = "fall"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_j3vb1")]
+}
+
+[sub_resource type="Animation" id="Animation_n4dxd"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_xotbs")]
+}
+
+[sub_resource type="Animation" id="Animation_ixch4"]
+resource_name = "jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_w5xkg"), ExtResource("5_l5fcu")]
+}
+
+[sub_resource type="Animation" id="Animation_dlv4t"]
+resource_name = "run"
+length = 0.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_q012f"), ExtResource("7_7xggn"), ExtResource("8_cdv4s"), ExtResource("9_kxwlx")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h7n7r"]
+_data = {
+&"fall": SubResource("Animation_32dci"),
+&"idle": SubResource("Animation_n4dxd"),
+&"jump": SubResource("Animation_ixch4"),
+&"run": SubResource("Animation_dlv4t")
+}
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(52, 536)
+scale = Vector2(1.3075, 1.3075)
+script = ExtResource("1_wwqqy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.8241, 5)
+scale = Vector2(0.1503, 0.1503)
+texture = ExtResource("2_j3vb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.05927, 6.88336)
+shape = SubResource("CapsuleShape2D_63b0k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h7n7r")
+}
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="WallJumpTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="WallJumpTimer" to="." method="_on_wall_jump_timer_timeout"]
