@@ -234,4 +234,4 @@ Ideas and snippets
 
 
    * Luna - a virtual assistant program (think Clippy mixed with Malwarebytes)
-   * When attacked Solanna executed a swap protocol - giving Luna the physical body
+   * When attacked Solanna executed a swap protocol - giving Luna the physical body and putting her in a chip/usb/sd card. Luna has to go get the chip, is cut off by Set (First boss), Set makes off with the save device.
