@@ -229,9 +229,12 @@ https://youtube.com/playlist?list=PLxuwkL-15THC-bkwN148Xaj_-1cQWmxOX&si=515UyCF4
    * Juno’s
    * Boss Rush?
    * Cutscenes
+==========================================================
+
 Story stuff
 Ideas and snippets
 
-
    * Luna - a virtual assistant program (think Clippy mixed with Malwarebytes)
-   * When attacked Solanna executed a swap protocol - giving Luna the physical body and putting her in a chip/usb/sd card. Luna has to go get the chip, is cut off by Set (First boss), Set makes off with the save device.
+   * When attacked Solanna executed a swap protocol - giving Luna the physical body and putting her in a chip/usb/sd card.
+   * Luna has to go get the chip, is cut off by Set (First boss), Set makes off with the save device.
+   * Luna is forced into shutdown and is rescued by Juno.
