@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqrsjqixktyrg"]
+
+[ext_resource type="Texture2D" uid="uid://d26qlwd8i5em7" path="res://luna_test_sprite_idle.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dlf3fjlgmruvs" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+radius = 11.0
+height = 46.0
+
+[sub_resource type="Animation" id="Animation_4flbx"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_onrkg"]
+resource_name = "move"
+
+[sub_resource type="Animation" id="Animation_i3pqv"]
+resource_name = "fall"
+
+[sub_resource type="Animation" id="Animation_hqtel"]
+resource_name = "jump"
+
+[sub_resource type="Animation" id="Animation_sweqy"]
+resource_name = "double_jump"
+
+[sub_resource type="Animation" id="Animation_2hs0m"]
+resource_name = "Dash"
+
+[sub_resource type="Animation" id="Animation_1jxqw"]
+resource_name = "Kick"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sweqy"]
+_data = {
+&"Dash": SubResource("Animation_2hs0m"),
+&"Kick": SubResource("Animation_1jxqw"),
+&"double_jump": SubResource("Animation_sweqy"),
+&"fall": SubResource("Animation_i3pqv"),
+&"idle": SubResource("Animation_4flbx"),
+&"jump": SubResource("Animation_hqtel"),
+&"move": SubResource("Animation_onrkg")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -0.99999976)
+scale = Vector2(0.1311035, 0.12110409)
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("CapsuleShape2D_onrkg")
+
+[node name="Coyote_Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Dash_Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sweqy")
+}
+
+[node name="Wall_cling_Timer" type="Timer" parent="."]
