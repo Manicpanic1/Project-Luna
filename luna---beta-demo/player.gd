@@ -8,7 +8,8 @@ class_name Player
 @onready var wall_cling = $Wall_cling_Timer
 
 const SPEED = 275.0
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -650.0
+
 
 #jump counter
 var jump_count = 0
@@ -50,7 +51,7 @@ func _physics_process(delta):
 			jump_count += 2
 
 
-	#Double jump handler
+#double jump handler
 	if Input.is_action_just_pressed("Jump") and jump_count < max_jump:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
@@ -60,19 +61,7 @@ func _physics_process(delta):
 			jump_count += 2
 
 
-#Kick Handler
-
-
-
-#Wall Jump and slide Handler
-
-
-
-#Shooting Handler
-
-
-
-#Dash Handler
+#dash Handler
 	if Input.is_action_just_pressed("Dash"):
 		if !is_dashing and direction:
 			start_dash()
@@ -82,6 +71,18 @@ func _physics_process(delta):
 			velocity.x = direction * SPEED * dash_speed
 		else:
 			velocity.x = direction * SPEED
+
+
+#wall slide & jump
+	
+
+
+#kick Handler
+	
+
+
+#shooting Handler
+	
 
 
 	move_and_slide()

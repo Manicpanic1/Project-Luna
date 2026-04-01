@@ -4,16 +4,30 @@
 [ext_resource type="Texture2D" uid="uid://qjxi8lbtoqck" path="res://test floor.png" id="2_1ykru"]
 [ext_resource type="PackedScene" uid="uid://cqrsjqixktyrg" path="res://player.tscn" id="3_ffiev"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_its5w"]
-size = Vector2(1166, 51)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffiev"]
 size = Vector2(38, 633)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_its5w"]
+size = Vector2(1166, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibx6s"]
 size = Vector2(35, 637)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="wall 3" type="StaticBody2D" parent="."]
+position = Vector2(920, 27)
+scale = Vector2(0.7200012, 0.7200012)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall 3"]
+position = Vector2(-23.000002, 325.00006)
+rotation = -1.5693749
+scale = Vector2(1.5597677, 0.3236774)
+texture = ExtResource("2_1ykru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall 3"]
+position = Vector2(-16, 318.5)
+shape = SubResource("RectangleShape2D_ffiev")
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2(2, -17)
