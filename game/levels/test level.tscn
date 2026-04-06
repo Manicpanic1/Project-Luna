@@ -1,17 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc4c5x3c5grw7"]
+[gd_scene load_steps=11 format=3 uid="uid://cc4c5x3c5grw7"]
 
 [ext_resource type="Texture2D" uid="uid://c12x05hum15rk" path="res://test floor new.png" id="1_d7gu7"]
 [ext_resource type="Script" uid="uid://slrgajeuc67e" path="res://levels/test level.gd" id="1_qf3xn"]
 [ext_resource type="PackedScene" uid="uid://bxaqqldcfgpwt" path="res://entities/player.tscn" id="2_hkj70"]
 [ext_resource type="Texture2D" uid="uid://cjftirwpu5g5x" path="res://testwall new.png" id="4_2lhsj"]
+[ext_resource type="PackedScene" uid="uid://q6q21dunhpwi" path="res://menus/pausemenu.tscn" id="5_8yh11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipijt"]
-size = Vector2(513.922, 75)
+size = Vector2(510.48648, 73.846)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ving"]
+size = Vector2(20, 28.932543)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iih4f"]
-size = Vector2(106, 22)
+size = Vector2(107.63989, 23)
 
 [sub_resource type="Animation" id="Animation_6pjf5"]
 resource_name = "move"
@@ -35,129 +37,146 @@ _data = {
 &"move": SubResource("Animation_6pjf5")
 }
 
-[node name="level 1" type="Node2D"]
+[node name="Node2D" type="Node2D"]
+
+[node name="level 1" type="Node2D" parent="."]
 script = ExtResource("1_qf3xn")
 
-[node name="platform" type="StaticBody2D" parent="."]
+[node name="platform" type="StaticBody2D" parent="level 1"]
 position = Vector2(274, 542)
 scale = Vector2(0.41951, 1.19412)
 
-[node name="Sprite2D" type="Sprite2D" parent="platform"]
+[node name="Sprite2D" type="Sprite2D" parent="level 1/platform"]
 position = Vector2(245, 27.875)
 scale = Vector2(0.996094, 0.2475)
 texture = ExtResource("1_d7gu7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level 1/platform"]
 position = Vector2(245, 27.5)
 shape = SubResource("RectangleShape2D_ipijt")
 
-[node name="platform5" type="StaticBody2D" parent="."]
+[node name="platform5" type="StaticBody2D" parent="level 1"]
 position = Vector2(1299, 537)
 scale = Vector2(0.158693, 1.31671)
 
-[node name="Sprite2D" type="Sprite2D" parent="platform5"]
+[node name="Sprite2D" type="Sprite2D" parent="level 1/platform5"]
 position = Vector2(245, 27.875)
 scale = Vector2(0.996094, 0.2475)
 texture = ExtResource("1_d7gu7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level 1/platform5"]
 position = Vector2(245, 27.5)
 shape = SubResource("RectangleShape2D_ipijt")
 
-[node name="platform3" type="StaticBody2D" parent="."]
+[node name="platform3" type="StaticBody2D" parent="level 1"]
 position = Vector2(562, 451)
 scale = Vector2(0.391405, 0.672049)
 
-[node name="Sprite2D" type="Sprite2D" parent="platform3"]
+[node name="Sprite2D" type="Sprite2D" parent="level 1/platform3"]
 position = Vector2(245, 27.875)
 scale = Vector2(0.996094, 0.2475)
 texture = ExtResource("1_d7gu7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level 1/platform3"]
 position = Vector2(245, 27.5)
 shape = SubResource("RectangleShape2D_ipijt")
 
-[node name="platform4" type="StaticBody2D" parent="."]
+[node name="platform4" type="StaticBody2D" parent="level 1"]
 position = Vector2(868, 420)
 scale = Vector2(0.886863, 2.97299)
 
-[node name="Sprite2D" type="Sprite2D" parent="platform4"]
+[node name="Sprite2D" type="Sprite2D" parent="level 1/platform4"]
 position = Vector2(245, 27.875)
 scale = Vector2(0.996094, 0.2475)
 texture = ExtResource("1_d7gu7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform4"]
-position = Vector2(247.012, 27.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level 1/platform4"]
+position = Vector2(245.24646, 27.841248)
 shape = SubResource("RectangleShape2D_ipijt")
 
-[node name="platform6" type="StaticBody2D" parent="."]
+[node name="platform6" type="StaticBody2D" parent="level 1"]
 position = Vector2(1677, 420)
 scale = Vector2(0.886863, 2.97299)
 
-[node name="Sprite2D" type="Sprite2D" parent="platform6"]
+[node name="Sprite2D" type="Sprite2D" parent="level 1/platform6"]
 position = Vector2(245, 27.875)
 scale = Vector2(0.996094, 0.2475)
 texture = ExtResource("1_d7gu7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform6"]
-position = Vector2(246.57, 27.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level 1/platform6"]
+position = Vector2(245.08899, 27.5)
 shape = SubResource("RectangleShape2D_ipijt")
 
-[node name="platform8" type="StaticBody2D" parent="."]
+[node name="platform8" type="StaticBody2D" parent="level 1"]
 position = Vector2(2701, 344)
 scale = Vector2(0.886863, 4.09299)
 
-[node name="Sprite2D" type="Sprite2D" parent="platform8"]
+[node name="Sprite2D" type="Sprite2D" parent="level 1/platform8"]
 position = Vector2(245, 27.875)
 scale = Vector2(0.996094, 0.2475)
 texture = ExtResource("1_d7gu7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform8"]
-position = Vector2(245, 27.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level 1/platform8"]
+position = Vector2(245, 27.735756)
 shape = SubResource("RectangleShape2D_ipijt")
 
-[node name="platform2" type="StaticBody2D" parent="."]
+[node name="platform2" type="StaticBody2D" parent="level 1"]
 position = Vector2(9, 612)
 scale = Vector2(6.2862, 0.533265)
 
-[node name="Sprite2D" type="Sprite2D" parent="platform2"]
-position = Vector2(245, 27.875)
-scale = Vector2(0.996094, 0.2475)
+[node name="Sprite2D" type="Sprite2D" parent="level 1/platform2"]
+position = Vector2(244.51479, 27.875)
+scale = Vector2(0.9941986, 0.2475)
 texture = ExtResource("1_d7gu7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
-position = Vector2(243.549, 27.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level 1/platform2"]
+position = Vector2(243.6273, 27.5)
+scale = Vector2(0.99999964, 0.99999976)
 shape = SubResource("RectangleShape2D_ipijt")
 
-[node name="platform9" type="StaticBody2D" parent="."]
-position = Vector2(34, 2421)
+[node name="platform9" type="StaticBody2D" parent="level 1"]
+position = Vector2(91, 1322)
 scale = Vector2(6.7662, 0.533265)
 
-[node name="Sprite2D" type="Sprite2D" parent="platform9"]
+[node name="Sprite2D" type="Sprite2D" parent="level 1/platform9"]
 position = Vector2(245, 27.875)
 scale = Vector2(0.996094, 0.2475)
 texture = ExtResource("1_d7gu7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level 1/platform9"]
 position = Vector2(243.549, 27.5)
 shape = SubResource("RectangleShape2D_ipijt")
 
-[node name="wall" type="StaticBody2D" parent="."]
+[node name="wall" type="StaticBody2D" parent="level 1"]
 position = Vector2(-35, 129)
 scale = Vector2(-2.44514, 4.06016)
 
-[node name="Sprite2D" type="Sprite2D" parent="wall"]
+[node name="Sprite2D" type="Sprite2D" parent="level 1/wall"]
 scale = Vector2(0.0359382, 0.850945)
 texture = ExtResource("4_2lhsj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level 1/wall"]
 scale = Vector2(1, 12.84)
 shape = SubResource("RectangleShape2D_5ving")
 
-[node name="Player" parent="." instance=ExtResource("2_hkj70")]
+[node name="wall2" type="StaticBody2D" parent="level 1"]
+position = Vector2(3497, 829)
+scale = Vector2(-2.44514, 4.06016)
+
+[node name="Sprite2D" type="Sprite2D" parent="level 1/wall2"]
+position = Vector2(0, -57.863163)
+scale = Vector2(0.0359382, 1.2366993)
+texture = ExtResource("4_2lhsj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level 1/wall2"]
+position = Vector2(0, -57.34691)
+scale = Vector2(0.9999998, 12.84)
+shape = SubResource("RectangleShape2D_5ving")
+
+[node name="Player" parent="level 1" instance=ExtResource("2_hkj70")]
 position = Vector2(37, 392)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="level 1/Player"]
 position = Vector2(71.8929, -57.3614)
 scale = Vector2(0.764818, 0.764818)
 zoom = Vector2(1.25, 1.25)
@@ -169,23 +188,28 @@ drag_left_margin = 0.01
 drag_right_margin = 0.05
 drag_bottom_margin = 0.01
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="level 1"]
 position = Vector2(2173.36, 463)
 
-[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D"]
+[node name="ColorRect" type="ColorRect" parent="level 1/AnimatableBody2D"]
 offset_left = -42.0
 offset_top = -12.0
 offset_right = -2.0
 offset_bottom = 28.0
 scale = Vector2(2.67755, 0.573581)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(11, -1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level 1/AnimatableBody2D"]
+position = Vector2(11.820068, -0.5)
 shape = SubResource("RectangleShape2D_iih4f")
 one_way_collision = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level 1/AnimatableBody2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_14355")
 }
 autoplay = "move"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pausemenu" parent="CanvasLayer" instance=ExtResource("5_8yh11")]
+visible = false
