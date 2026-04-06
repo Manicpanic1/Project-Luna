@@ -28,6 +28,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("right"):
 		sprite.scale.x = abs(sprite.scale.x)
 		
+		
 	if not is_on_floor(): velocity.y += gravity * delta
 	else: jumpsMade = 0
 		
@@ -35,6 +36,7 @@ func _physics_process(delta):
 	
 	if (is_on_floor() || !coyote_timer.is_stopped()):
 		jump_count = 0
+
 
 #jump handler
 	if Input.is_action_just_pressed("jump") and jump_count < max_jump:
@@ -44,21 +46,35 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump") and not is_on_floor() and jump_count < max_jump:
 			velocity.y = JUMP_VELOCITY
 			jump_count += 2
+
+
+#double jump handler
+	if Input.is_action_just_pressed("jump") and jump_count < max_jump:
+		velocity.y = JUMP_VELOCITY
+		jump_count += 1
 	
+		if Input.is_action_just_pressed("jump") and not is_on_floor() and jump_count < max_jump:
+			velocity.y = JUMP_VELOCITY
+			jump_count += 2
+
+
+#dash Handler
 	if Input.is_action_just_pressed("dash"):
 		if !is_dashing and direction:
 			start_dash()
-	
+
+
 	if direction:
 		if is_dashing:
 			velocity.x = direction * SPEED * dash_speed
 		else:
 			velocity.x = direction * SPEED
-			
-#Godot please, I beg of you
-	
+
+
+#Friction (Do not move or remove)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+
 
 	update_animation()
 	
@@ -78,6 +94,8 @@ func start_dash():
 	is_dashing = true
 	$DashTimer.start()
 	$DashTimer.connect("timeout",stop_dash)
+
+
 func stop_dash():
 	is_dashing = false
 func update_animation():
@@ -90,3 +108,4 @@ func update_animation():
 		animation.play("jump")
 	if velocity.y > 0 :
 		animation.play("fall")
+	
