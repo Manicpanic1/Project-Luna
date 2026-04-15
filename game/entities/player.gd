@@ -9,7 +9,7 @@ class_name Player
 
 const SPEED = 250.0
 const JUMP_VELOCITY = -600.0
-const WALL_SLIDE_GRAViTY := 250.0
+const WALL_SLIDE_GRAVITY := 250.0
 const WALL_SLIDE_VELOCITY := 400.0
 const WALL_JUMP_LENGTH := 35.0
 const WALL_JUMP_VELOCITY := -500.0
