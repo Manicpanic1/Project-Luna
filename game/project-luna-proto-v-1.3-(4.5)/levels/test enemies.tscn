@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c3s23xpaijimq"]
+
+[ext_resource type="Texture2D" uid="uid://c12x05hum15rk" path="res://test floor new.png" id="1_jdn02"]
+[ext_resource type="Texture2D" uid="uid://cjftirwpu5g5x" path="res://testwall new.png" id="2_bq63t"]
+[ext_resource type="PackedScene" uid="uid://bxaqqldcfgpwt" path="res://entities/player.tscn" id="3_bq63t"]
+[ext_resource type="PackedScene" uid="uid://bic0jiffjvgx7" path="res://menus/pause.tscn" id="4_gnep4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdn02"]
+size = Vector2(1844, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq63t"]
+size = Vector2(36, 989)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnep4"]
+size = Vector2(41, 989.5)
+
+[node name="Node2D" type="Node2D" unique_id=1927456903]
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1828374716]
+position = Vector2(0, 88)
+scale = Vector2(0.76000047, 0.76000047)
+
+[node name="TestFloorNew" type="Sprite2D" parent="floor" unique_id=800099905]
+position = Vector2(915.4999, 867)
+scale = Vector2(3.5761716, 0.12666667)
+texture = ExtResource("1_jdn02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=2036678262]
+position = Vector2(915, 867)
+shape = SubResource("RectangleShape2D_jdn02")
+
+[node name="wall 1" type="StaticBody2D" parent="." unique_id=2069719214]
+position = Vector2(0, 88)
+scale = Vector2(0.76000047, 0.76000047)
+
+[node name="TestwallNew" type="Sprite2D" parent="wall 1" unique_id=46266960]
+position = Vector2(-18, 392.00006)
+scale = Vector2(0.06835937, 3.2933333)
+texture = ExtResource("2_bq63t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall 1" unique_id=1643897185]
+position = Vector2(-17, 391.5)
+shape = SubResource("RectangleShape2D_bq63t")
+
+[node name="wall 2" type="StaticBody2D" parent="." unique_id=1473862728]
+position = Vector2(0, 88)
+scale = Vector2(0.76000047, 0.76000047)
+
+[node name="TestwallNew2" type="Sprite2D" parent="wall 2" unique_id=1188161383]
+position = Vector2(1853, 391.99997)
+scale = Vector2(0.080078125, 3.2933333)
+texture = ExtResource("2_bq63t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall 2" unique_id=1384351331]
+position = Vector2(1853.5, 393.25)
+shape = SubResource("RectangleShape2D_gnep4")
+
+[node name="Player" parent="." unique_id=1270688644 instance=ExtResource("3_bq63t")]
+position = Vector2(117.000015, 477.00003)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=117595296]
+position = Vector2(71.8929, -57.3614)
+scale = Vector2(0.764818, 0.764818)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.01
+drag_right_margin = 0.05
+drag_bottom_margin = 0.01
+
+[node name="CanvasLayer" parent="Player" unique_id=1394588714 instance=ExtResource("4_gnep4")]
