@@ -1,5 +1,6 @@
 # Project-Luna
 [Project Luna.txt](https://github.com/user-attachments/files/26067760/Project.Luna.txt)
+https://docs.google.com/document/d/1Yv-WdYCaud_2BYyuLbR5RFpbu02d7egvDvv30tnLfgA/edit?tab=t.ypazzknva4o0
 mechanical details
 Gameplay 
 
