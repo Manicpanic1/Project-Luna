@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://jc5vi8y0i28m"]
+
+[ext_resource type="Texture2D" uid="uid://ciw5gajy6sqas" path="res://Project Luna - Promo proto.png" id="1_8gy84"]
+[ext_resource type="Script" uid="uid://3xdxgfijq6vh" path="res://menus/main_menu.gd" id="1_ij7vn"]
+[ext_resource type="Texture2D" uid="uid://cahhsftf5tkpj" path="res://pl logo - main.png" id="3_yjgyn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvqlu"]
+texture = ExtResource("1_8gy84")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yjgyn"]
+texture = ExtResource("3_yjgyn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gy84"]
+bg_color = Color(0.5137255, 0.5686275, 0.9098039, 0.9529412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjgyn"]
+bg_color = Color(0.71897537, 0.45982558, 0.9336962, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqbgu"]
+bg_color = Color(0.2901961, 0.32156864, 0.72156864, 0.91764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oblsv"]
+bg_color = Color(0.5137255, 0.5686275, 0.9098039, 0.9529412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nc6jr"]
+bg_color = Color(0.2901961, 0.32156864, 0.72156864, 0.91764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a63lr"]
+bg_color = Color(0.5137255, 0.5686275, 0.9098039, 0.9529412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwbes"]
+bg_color = Color(0.7176471, 0.45882353, 0.93333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hswy5"]
+bg_color = Color(0.2901961, 0.32156864, 0.72156864, 0.91764706)
+
+[node name="main_menu" type="Control" unique_id=949752256]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ij7vn")
+
+[node name="Panel" type="Panel" parent="." unique_id=1190778985]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.017
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.584002
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kvqlu")
+
+[node name="Panel2" type="Panel" parent="." unique_id=321640262]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20700002
+anchor_right = 0.84800005
+anchor_bottom = 0.574
+offset_left = -0.46401978
+offset_top = 32.0
+offset_right = 0.2949829
+offset_bottom = -68.951996
+theme_override_styles/panel = SubResource("StyleBoxTexture_yjgyn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=143095340]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.57600003
+anchor_right = 0.5
+anchor_bottom = 0.57600003
+offset_left = -146.0
+offset_top = -98.24802
+offset_right = 151.0
+offset_bottom = 92.1366
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.96000123, 1.04)
+
+[node name="Test Level" type="Button" parent="VBoxContainer" unique_id=2069480876]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Combat")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gy84")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yjgyn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rqbgu")
+text = "Test Level"
+
+[node name="Combat" type="Button" parent="VBoxContainer" unique_id=417327001]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Test Level")
+focus_neighbor_bottom = NodePath("../Settings")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oblsv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nc6jr")
+text = "Combat Test"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=2056267985]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Combat")
+focus_neighbor_bottom = NodePath("../Quit")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1703662254]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Test Level")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a63lr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pwbes")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hswy5")
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=594899717]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.62100005
+anchor_top = 0.44300002
+anchor_right = 0.75000006
+anchor_bottom = 0.531
+offset_left = 8.60791
+offset_top = -12.064026
+offset_right = -14.873291
+offset_bottom = -46.088013
+scale = Vector2(1.0069792, 1.0467628)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "Prototype v1.5"
+
+[connection signal="pressed" from="VBoxContainer/Test Level" to="." method="_on_test_level_pressed"]
+[connection signal="pressed" from="VBoxContainer/Combat" to="." method="_on_enemyboss_test_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

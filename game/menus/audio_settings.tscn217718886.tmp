@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://d3ycpoxik8fti"]
+
+[ext_resource type="Script" uid="uid://c0mmoeulis7u0" path="res://menus/audio_settings.gd" id="1_4ec8t"]
+[ext_resource type="Script" uid="uid://ccx18xsygd32" path="res://menus/h_slider.gd" id="1_heg8h"]
+[ext_resource type="Script" uid="uid://ds1qsaoteajvc" path="res://menus/h_slider2.gd" id="2_4ec8t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjdgx"]
+bg_color = Color(0.8457584, 0.45226777, 0.6307377, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2eqmx"]
+bg_color = Color(0.7981341, 0.20968881, 0.5386138, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c465p"]
+bg_color = Color(0.90099233, 0.5856008, 0.7206578, 1)
+
+[node name="Audio Settings" type="Panel" unique_id=1602745099]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ec8t")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=310057329]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -324.0
+offset_right = 317.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0.15294118, 0.1254902, 0.2627451, 0.7764706)
+
+[node name="Label3" type="Label" parent="." unique_id=1517892748]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -307.0
+offset_right = 304.0
+offset_bottom = -204.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Audio Settings"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1235786293]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = -189.0
+offset_right = 251.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1002002068]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Music Volume"
+
+[node name="Music slider" type="HSlider" parent="VBoxContainer" unique_id=2114804142]
+layout_mode = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+script = ExtResource("1_heg8h")
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=2074698925]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "SFX Volume"
+
+[node name="SFX slider" type="HSlider" parent="VBoxContainer" unique_id=1359834717]
+layout_mode = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+script = ExtResource("2_4ec8t")
+
+[node name="back to pause" type="Button" parent="." unique_id=568911186]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -35.0
+offset_right = 195.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_vjdgx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2eqmx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c465p")
+text = "Exit to Main Menu"
+
+[node name="Resume Game" type="Button" parent="." unique_id=209240863]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = 52.0
+offset_right = 195.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_vjdgx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2eqmx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c465p")
+text = "Resume Game"

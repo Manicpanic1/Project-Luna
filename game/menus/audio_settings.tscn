@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://d3ycpoxik8fti"]
+
+[ext_resource type="Script" uid="uid://b0eyt04fyvjxj" path="res://menus/options.gd" id="1_heg8h"]
+[ext_resource type="Script" uid="uid://bk567s2dqiblk" path="res://menus/audio.gd" id="2_4ec8t"]
+[ext_resource type="AudioStream" uid="uid://dog5pwncwl431" path="res://jump.wav" id="4_2eqmx"]
+[ext_resource type="AudioStream" uid="uid://c07jmcb6kgesr" path="res://Backstage.mp3" id="4_vjdgx"]
+
+[node name="Options menu" type="Control" unique_id=1112107285]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_heg8h")
+
+[node name="Audio" type="Control" parent="." unique_id=917801485]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.54200006
+anchor_right = 0.5
+anchor_bottom = 0.54200006
+offset_left = -576.0
+offset_top = -351.21603
+offset_right = -536.0
+offset_bottom = -311.21603
+script = ExtResource("2_4ec8t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Audio" unique_id=1051498803]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.818
+anchor_bottom = 16.109001
+offset_left = 306.0
+offset_top = 256.0
+offset_right = -269.71997
+offset_bottom = -148.36005
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MasterLabel" type="Label" parent="Audio/VBoxContainer" unique_id=116694487]
+layout_mode = 2
+text = "Master"
+vertical_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="Audio/VBoxContainer" unique_id=872424589]
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+
+[node name="MusicLabel" type="Label" parent="Audio/VBoxContainer" unique_id=2110598635]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="Audio/VBoxContainer" unique_id=149694677]
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+
+[node name="SFXLabel" type="Label" parent="Audio/VBoxContainer" unique_id=892586006]
+layout_mode = 2
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="Audio/VBoxContainer" unique_id=1697244167]
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+
+[node name="Confirm" type="Button" parent="Audio" unique_id=544212907]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 15.262001
+anchor_top = 11.537001
+anchor_right = 15.262001
+anchor_bottom = 11.537001
+offset_left = -35.48004
+offset_top = -15.4800415
+offset_right = 35.51996
+offset_bottom = 15.5199585
+text = "Confirm"
+
+[node name="Backstage" type="AudioStreamPlayer" parent="Audio" unique_id=281433148]
+stream = ExtResource("4_vjdgx")
+autoplay = true
+bus = &"Music"
+
+[node name="Jump" type="AudioStreamPlayer" parent="Audio" unique_id=1235807141]
+stream = ExtResource("4_2eqmx")
+autoplay = true
+bus = &"Sound FX"
+
+[node name="Back" type="Button" parent="Audio" unique_id=564379230]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 15.190001
+anchor_top = 11.603001
+anchor_right = 15.190001
+anchor_bottom = 11.603001
+offset_left = -20.600037
+offset_top = 23.879974
+offset_right = 24.399963
+offset_bottom = 54.879974
+text = "Back"
+
+[connection signal="mouse_exited" from="Audio/VBoxContainer/MasterSlider" to="Audio" method="_on_master_slider_mouse_exited"]
+[connection signal="mouse_exited" from="Audio/VBoxContainer/MusicSlider" to="Audio" method="_on_music_slider_mouse_exited"]
+[connection signal="mouse_exited" from="Audio/VBoxContainer/SFXSlider" to="Audio" method="_on_sfx_slider_mouse_exited"]
+[connection signal="pressed" from="Audio/Confirm" to="Audio" method="_on_confirm_pressed"]
+[connection signal="pressed" from="Audio/Back" to="Audio" method="_on_back_pressed"]

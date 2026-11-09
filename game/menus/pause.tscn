@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://bic0jiffjvgx7"]
+
+[ext_resource type="Script" uid="uid://b2klh8iqsaih1" path="res://menus/pause.gd" id="1_t3mel"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpcmd"]
+bg_color = Color(0.84705883, 0.4509804, 0.6313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjfx1"]
+bg_color = Color(0.8, 0.20784314, 0.5372549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4x5kb"]
+bg_color = Color(0.9019608, 0.58431375, 0.72156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3mel"]
+bg_color = Color(0.8457584, 0.45226777, 0.6307377, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fejog"]
+bg_color = Color(0.7981341, 0.20968881, 0.5386138, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqg6t"]
+bg_color = Color(0.90099233, 0.5856008, 0.7206578, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncovw"]
+bg_color = Color(0.84705883, 0.4509804, 0.6313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ef1a"]
+bg_color = Color(0.8, 0.20784314, 0.5372549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24t5t"]
+bg_color = Color(0.9019608, 0.58431375, 0.72156864, 1)
+
+[node name="Pause Menu" type="CanvasLayer" unique_id=1597010788]
+process_mode = 3
+script = ExtResource("1_t3mel")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1867754676]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -324.0
+offset_right = 317.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0.15294118, 0.1254902, 0.2627451, 0.7764706)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2072741488]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -86.5
+offset_right = 120.0
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Restart" type="Button" parent="VBoxContainer" unique_id=1655797334]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Back")
+focus_neighbor_bottom = NodePath("../Settings")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lpcmd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tjfx1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4x5kb")
+text = "Restart"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1648902769]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_t3mel")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fejog")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lqg6t")
+text = "Settings"
+
+[node name="Back" type="Button" parent="VBoxContainer" unique_id=1565497424]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Restart")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_ncovw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8ef1a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_24t5t")
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="." unique_id=418226420]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.2
+offset_left = -140.0
+offset_top = -51.600006
+offset_right = 139.0
+offset_bottom = 37.399994
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 75
+text = "Pause"
+horizontal_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
